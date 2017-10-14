@@ -23,4 +23,4 @@
 
 ## 抢先体验
 
-[一个电影日历小程序码]
+![一个电影日历小程序码](http://ohl540wt2.bkt.clouddn.com/movie-calendar.jpg)
