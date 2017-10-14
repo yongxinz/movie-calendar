@@ -4,7 +4,6 @@
 ## 首页
 
 小程序打开只有一个页面
-![楚门的世界](http://ohl540wt2.bkt.clouddn.com/WechatIMG258.png)
 
 ## 说明及问题
 
