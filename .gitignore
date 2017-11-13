@@ -1,0 +1,15 @@
+# use glob syntax.
+syntax: glob
+
+local.py
+node_modules
+deal-file
+dist
+webdist*
+.idea/
+.DS_Store
+*.pyc
+*.pyo
+*.db
+*.sqlite3
+*.log
