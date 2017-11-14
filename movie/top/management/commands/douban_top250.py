@@ -22,7 +22,7 @@ class Command(BaseCommand):
             '''
             response = requests.get(url)
             soup = BeautifulSoup(response.text, 'lxml')
-            movies = soup.find_all('div', class_="info")
+            movies = soup.find_all('div', class_="item")
 
             for info in movies:
                 # 获得电影的中文名
@@ -32,6 +32,19 @@ class Command(BaseCommand):
                 link = info.find('a').get('href')
 
                 subject = re.findall('\d+', link)
+
+                images = info.find('img').get('src')
+
+                detail = info.select('.bd p')[0].text.strip().split('\n')
+                detail_ = detail[0].split(':')
+
+                directors = ''
+                casts = ''
+                if len(detail_) == 3:
+                    directors = detail_[1].split('主演')[0].strip()
+                    casts = detail_[2].strip()
+
+                year = detail[1].split('/')[0].strip()
 
                 # 找到评分以及评价人数
                 rating = info.find(class_='rating_num').text
@@ -43,7 +56,9 @@ class Command(BaseCommand):
                 else:
                     comment = comment_one.text
 
-                print(subject[0], title, link, rating, comment)
+                print(subject[0], title, link, rating, comment, directors, casts, year, images)
 
                 Movie.objects.update_or_create(subject=subject[0], defaults={'title': title, 'link': link,
-                                                                             'rating': rating, 'comment': comment})
+                                                                             'rating': rating, 'comment': comment,
+                                                                             'year': year, 'directors': directors,
+                                                                             'casts': casts, 'images': images})
