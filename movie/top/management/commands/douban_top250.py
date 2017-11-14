@@ -28,6 +28,12 @@ class Command(BaseCommand):
                 # 获得电影的中文名
                 title = info.find('span', class_='title').text  # find()只找到一个，结果以树结构返回
 
+                tmp = info.find('div', class_='star')
+                tmp = re.search('rating(\S+?)-t', str(tmp))
+                stars = re.findall('\d+', str(tmp))[2]
+                if int(stars) <= 5:
+                    stars += '0'
+
                 # 获得电影在豆瓣中的链接
                 link = info.find('a').get('href')
 
@@ -56,9 +62,10 @@ class Command(BaseCommand):
                 else:
                     comment = comment_one.text
 
-                print(subject[0], title, link, rating, comment, directors, casts, year, images)
+                print(subject[0], title, link, rating, comment, directors, casts, year, images, stars)
 
                 Movie.objects.update_or_create(subject=subject[0], defaults={'title': title, 'link': link,
                                                                              'rating': rating, 'comment': comment,
                                                                              'year': year, 'directors': directors,
-                                                                             'casts': casts, 'images': images})
+                                                                             'casts': casts, 'images': images,
+                                                                             'stars': int(stars)})

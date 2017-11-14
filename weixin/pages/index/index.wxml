@@ -1,4 +1,3 @@
-<!--index.wxml-->
 <view class="calendar-container">
     <image src="../../image/loading.gif" mode="aspectFit" class="loading" style="opacity:{{loading_opacity}}"></image>
     <view animation="{{animationData}}" class="container-inner">
@@ -24,7 +23,7 @@
             {{comment}}
         </view>
         <view class="inner-movie">
-            <view class="movie-average">{{average}}</view>
+            <view class="movie-average">{{rating}}</view>
             <view class="movie-info">
                 <text class="title">《{{title}}》</text><span class="show-year">{{show_year}}</span>
                 <view class="stars">

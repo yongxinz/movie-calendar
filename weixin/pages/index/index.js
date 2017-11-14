@@ -11,18 +11,20 @@ Page({
         'show_year': 0,
         'directors': '',
         'title': '',
-        'average': '',
+        'rating': '',
         'stars': '',
         'loading_opacity': 1,
         'animationData': '',
         'images': '',
         'casts': '',
-        'start': undefined
+        'id': ''
     },
 
     // 页面初始化
     onLoad: function (options) {
-        this.setData({ start: options.start })
+        if (options.id !== undefined) {
+            this.setData({ id: options.id });
+        }
 
         var zr = wezrender.zrender.init("line-canvas-1", 375, 600);
         var circle = new wezrender.graphic.Image({
@@ -38,8 +40,7 @@ Page({
         zr.add(circle);
     },
 
-    //页面初次渲染完成
-    onReady: function (e) {
+    onShow: function () {
         this.showDate();
         this.loadMovie();
     },
@@ -69,64 +70,31 @@ Page({
         })
     },
 
-    //加载top250电影信息
     loadMovie: function () {
-        if (this.data.start === undefined) {
-            this.setData({ start: Math.floor(Math.random() * 250) });
-        }
-        
-        var _this = this,
-            //请求发送的数据，随机的起始值和条数（只需要一条）
-            reqData = {
-                start: _this.data.start,
-                count: 1
-            };
-
+        let that = this;
         wx.request({
-            url: 'https://api.douban.com/v2/movie/top250',
-            data: reqData,
+            url: app.config.api.movie,
+            data: {'id': that.data.id},
             header: {
                 'Content-Type': 'json'
             },
             success: function (res) {
-                var movieData = res.data.subjects[0];
-                wx.request({
-                    url: movieData.alt + '/comments',
-                    header: {
-                        'Content-Type': 'json'
-                    },
-                    success: function (res) {
-                        var comment = res.data.match(/<\s*p\s+class=""\s*>(.*?)[\n\r\t]+/g);
-
-                        var directors = '';
-                        var casts = '';
-                        for (var i in movieData.directors) {
-                            directors += movieData.directors[i].name + '/'
-                        }
-
-                        for (var i in movieData.casts) {
-                            casts += movieData.casts[i].name + '/'
-                        }
-
-                        //设置数据，评分是整数需要补上小数点和0
-                        var average = movieData.rating.average % 1 === 0 ? movieData.rating.average + '.0' : movieData.rating.average;
-                        var renderData = {
-                            'show_year': movieData.year,
-                            'directors': directors,
-                            'title': movieData.title,
-                            'comment': comment[1].slice(12),
-                            'average': average,
-                            'stars': _this.starCount(movieData.rating.stars),
-                            'loading_opacity': 0,
-                            'images': movieData.images.large,
-                            'casts': casts
-                        };
-                        _this.setData(renderData);
-                        _this.loading();
-                    }
-                })
+                let movieData = res.data[0];
+                let renderData = {
+                    'show_year': movieData.year,
+                    'directors': movieData.directors,
+                    'title': movieData.title,
+                    'comment': movieData.comment,
+                    'rating': movieData.rating,
+                    'stars': that.starCount(movieData.stars),
+                    'images': movieData.images,
+                    'casts': movieData.casts,
+                    'loading_opacity': 0
+                };
+                that.setData(renderData);
+                that.loading();
             }
-        });
+        })
     },
 
     //计算行星显示规则
@@ -163,7 +131,7 @@ Page({
     onShareAppMessage: function () {
         return {
             title: this.data.title,
-            path: '/pages/index/index?start=' + this.data.start + '&count=1'
+            path: '/pages/index/index?id=' + this.data.id
         }
     }
 });
