@@ -1,3 +1,4 @@
+# coding=utf-8
 """movie URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
@@ -13,9 +14,15 @@ Including another URLconf
     1. Import the include() function: from django.conf.urls import url, include
     2. Add a URL to urlpatterns:  url(r'^blog/', include('blog.urls'))
 """
-from django.conf.urls import url
-from django.contrib import admin
+from django.conf.urls import url, include
+from rest_framework import routers
+
+from top.api import MovieViewSet
+
+router = routers.DefaultRouter()
+
+router.register(r'movie', MovieViewSet, base_name='movie')
 
 urlpatterns = [
-    url(r'^admin/', admin.site.urls),
+    url(r'^api/', include(router.urls)),
 ]
