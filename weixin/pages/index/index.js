@@ -89,7 +89,8 @@ Page({
                     'stars': that.starCount(movieData.stars),
                     'images': movieData.images,
                     'casts': movieData.casts,
-                    'loading_opacity': 0
+                    'loading_opacity': 0,
+                    'id': movieData.id
                 };
                 that.setData(renderData);
                 that.loading();

@@ -1,6 +1,7 @@
 import EventEmitter from "./event-emitter";
 
 let baseURL = 'https://movie.naturez.cn/api';
+//baseURL = 'http://192.168.8.110:8820/api';
 
 try {
     let res = wx.getSystemInfoSync();
