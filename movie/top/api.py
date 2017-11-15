@@ -16,8 +16,11 @@ class MovieViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         id = self.request.query_params.get('id', '')
         if id == '':
+            id_list = self.queryset.filter(casts='').values_list('id')
             count = self.queryset.count()
             random_num = random.randint(1, count)
+            while random_num in id_list:
+                random_num = random.randint(1, count)
             queryset = self.queryset.filter(id=random_num)
         else:
             queryset = self.queryset.filter(id=id)
