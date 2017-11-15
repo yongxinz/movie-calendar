@@ -68,10 +68,8 @@
     text-align: center;
     color: #AAA;
     font-size: 12px;
-}
-
-.date-directors text:last-child text {
-    display: none;
+    display: flex;
+    flex-direction: column;
 }
 
 .inner-comment {

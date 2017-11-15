@@ -13,8 +13,6 @@
             <view class="date-day">{{day}}</view>
             <view class="date-directors">
                 <text>导演：{{directors}}</text>
-            </view>
-            <view class="date-directors">
                 <text>主演：{{casts}}</text>
             </view>
         </view>
