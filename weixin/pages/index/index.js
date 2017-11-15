@@ -40,7 +40,7 @@ Page({
         zr.add(circle);
     },
 
-    onShow: function () {
+    onReady: function () {
         this.showDate();
         this.loadMovie();
     },
