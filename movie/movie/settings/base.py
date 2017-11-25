@@ -16,12 +16,10 @@ LANGUAGE_CODE = 'zh-hans'
 
 ALLOWED_HOSTS = [
     '127.0.0.1',
-    '192.168.1.11',
-    '192.168.8.110',
     'movie.naturez.cn'
 ]
 
-INTERNAL_IPS = ['127.0.0.1', '192.168.1.11', 'movie.naturez.cn']
+INTERNAL_IPS = ['127.0.0.1', 'movie.naturez.cn']
 INSTALLED_APPS += [
     'top'
 ]
