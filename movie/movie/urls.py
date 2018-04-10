@@ -17,10 +17,12 @@ Including another URLconf
 from django.conf.urls import url, include
 from rest_framework import routers
 
+from passport.api import WeixinUserViewSet
 from top.api import MovieViewSet
 
 router = routers.DefaultRouter()
 
+router.register(r'passport/wx', WeixinUserViewSet, base_name='passport_weixin')
 router.register(r'movie', MovieViewSet, base_name='movie')
 
 urlpatterns = [

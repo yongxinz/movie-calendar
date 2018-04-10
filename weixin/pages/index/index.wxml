@@ -1,5 +1,5 @@
 <view class="calendar-container">
-    <image src="../../image/loading.gif" mode="aspectFit" class="loading" style="opacity:{{loading_opacity}}"></image>
+    <image src="../../static/image/loading.gif" mode="aspectFit" class="loading" style="opacity:{{loading_opacity}}"></image>
     <view animation="{{animationData}}" class="container-inner">
         <view class="images">
             <image wx:if="{{ images }}" src="{{ images }}" mode="aspectFit" style="height: 420rpx"></image>
@@ -26,12 +26,12 @@
                 <text class="title">《{{title}}》</text><span class="show-year">{{show_year}}</span>
                 <view class="stars">
                     <block wx:for="{{stars}}" wx:for-item="item" wx:key="{{ id }}">
-                        <image src="../../image/{{item}}-star.png" mode="aspectFit" class="star"></image>
+                        <image src="../../static/image/{{item}}-star.png" mode="aspectFit" class="star"></image>
                     </block>
                 </view>
             </view>
             <view class="detail" bindtap='movieDetail' data-subject="{{ subject }}">
-                <image src="../../image/icon-detail.png" mode="aspectFit" class="detail-image"></image>
+                <image src="../../static/image/icon-detail.png" mode="aspectFit" class="detail-image"></image>
             </view>
         </view>
     </view>

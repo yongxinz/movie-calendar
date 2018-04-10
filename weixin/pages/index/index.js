@@ -32,7 +32,7 @@ Page({
             'style': {
                 x: 0,
                 y: 0,
-                image: '../../image/full-star.png',
+                image: '../../static/image/full-star.png',
                 width: 32,
                 height: 24,
                 text: 'koala'
@@ -41,9 +41,9 @@ Page({
         zr.add(circle);
     },
 
-    onReady: function () {
+    onShow: function () {
         this.showDate();
-        this.loadMovie();
+        app.helper.waitUserSid(this.getApiData)
     },
 
     //显示日期，年月日
@@ -71,32 +71,26 @@ Page({
         })
     },
 
-    loadMovie: function () {
+    getApiData: function () {
         let that = this;
-        wx.request({
-            url: app.config.apiMap.movie,
-            data: {'id': that.data.id},
-            header: {
-                'Content-Type': 'json'
-            },
-            success: function (res) {
-                let movieData = res.data[0];
-                let renderData = {
-                    'show_year': movieData.year,
-                    'directors': movieData.directors,
-                    'title': movieData.title,
-                    'comment': movieData.comment,
-                    'rating': movieData.rating,
-                    'stars': that.starCount(movieData.stars),
-                    'images': movieData.images,
-                    'casts': movieData.casts,
-                    'loading_opacity': 0,
-                    'id': movieData.id,
-                    'subject': movieData.subject
-                };
-                that.setData(renderData);
-                that.loading();
-            }
+
+        app.helper.getApi('movie', {'id': that.data.id}).then(function (res) {
+            let movieData = res.data.results[0];
+            let renderData = {
+                'show_year': movieData.year,
+                'directors': movieData.directors,
+                'title': movieData.title,
+                'comment': movieData.comment,
+                'rating': movieData.rating,
+                'stars': that.starCount(movieData.stars),
+                'images': movieData.images,
+                'casts': movieData.casts,
+                'loading_opacity': 0,
+                'id': movieData.id,
+                'subject': movieData.subject
+            };
+            that.setData(renderData);
+            that.loading();
         })
     },
 

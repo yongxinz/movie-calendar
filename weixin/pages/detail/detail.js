@@ -14,7 +14,7 @@ Page({
     },
 
     onShow: function () {
-        this.getApiData();
+        app.helper.waitUserSid(this.getApiData)
     },
 
     getApiData: function () {
@@ -50,7 +50,8 @@ Page({
                 filmgenres: data.genres.join(" / "),
                 filmcountry: data.countries.join(" / "),
                 filmcast: directors.join("/") + "/" + casts.join("/")
-            })
+            });
+            wx.hideLoading()
         })
     }
 });

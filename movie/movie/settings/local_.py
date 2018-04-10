@@ -15,3 +15,9 @@ DATABASES = {
 INSTALLED_APPS += [
     'rest_framework',
 ]
+
+WEIXIN = {
+    'url': 'https://api.weixin.qq.com',
+    'id': 'your appid',
+    'key': 'your appsecret',
+}

@@ -34,11 +34,8 @@ class MovieViewSet(viewsets.ModelViewSet):
     @list_route(methods=['get'])
     def detail(self, request):
         subject = self.request.query_params.get('subject')
-        print(subject)
 
         url = 'https://api.douban.com/v2/movie/subject/' + subject
         res = requests.get(url)
-
-        print(res.json())
 
         return JsonResponse(res.json())

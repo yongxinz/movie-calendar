@@ -102,7 +102,7 @@ class Router {
         let delta = obj.delta ? obj.delta : 1;
 
         if (obj.data) {
-            let pages = getCurrentPages()
+            let pages = getCurrentPages();
             let curPage = pages[pages.length - (delta + 1)];
             if (curPage.pageForResult) {
                 curPage.pageForResult(obj.data);
