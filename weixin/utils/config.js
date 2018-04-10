@@ -13,8 +13,11 @@ try {
     // Do something when catch error
 }
 
-module.exports.api = {
-    movie: `${baseURL}/movie/`
+module.exports.baseURL = baseURL;
+
+module.exports.apiMap = {
+    movie: `${baseURL}/movie/`,
+    detail: '/movie/detail/'
 };
 
 module.exports.emitter = new EventEmitter();

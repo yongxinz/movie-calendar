@@ -17,7 +17,8 @@ Page({
         'animationData': '',
         'images': '',
         'casts': '',
-        'id': ''
+        'id': '',
+        'subject': ''
     },
 
     // 页面初始化
@@ -73,7 +74,7 @@ Page({
     loadMovie: function () {
         let that = this;
         wx.request({
-            url: app.config.api.movie,
+            url: app.config.apiMap.movie,
             data: {'id': that.data.id},
             header: {
                 'Content-Type': 'json'
@@ -90,7 +91,8 @@ Page({
                     'images': movieData.images,
                     'casts': movieData.casts,
                     'loading_opacity': 0,
-                    'id': movieData.id
+                    'id': movieData.id,
+                    'subject': movieData.subject
                 };
                 that.setData(renderData);
                 that.loading();
@@ -134,5 +136,10 @@ Page({
             title: this.data.title,
             path: '/pages/index/index?id=' + this.data.id
         }
+    },
+
+    movieDetail: function (e) {
+        let subject = e.currentTarget.dataset.subject;
+        wx.navigateTo({ url: '../detail/detail?subject=' + subject })
     }
 });

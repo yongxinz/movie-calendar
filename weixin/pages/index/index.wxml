@@ -30,7 +30,7 @@
                     </block>
                 </view>
             </view>
-            <view class="detail">
+            <view class="detail" bindtap='movieDetail' data-subject="{{ subject }}">
                 <image src="../../image/icon-detail.png" mode="aspectFit" class="detail-image"></image>
             </view>
         </view>

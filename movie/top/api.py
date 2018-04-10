@@ -3,7 +3,11 @@ from __future__ import unicode_literals
 
 import random
 
+import requests
 from rest_framework import viewsets
+from rest_framework.decorators import list_route
+from rest_framework.response import Response
+from django.http import JsonResponse
 
 from .models import Movie
 from .serializers import MovieSerializer
@@ -26,3 +30,15 @@ class MovieViewSet(viewsets.ModelViewSet):
             queryset = self.queryset.filter(id=id)
 
         return queryset
+
+    @list_route(methods=['get'])
+    def detail(self, request):
+        subject = self.request.query_params.get('subject')
+        print(subject)
+
+        url = 'https://api.douban.com/v2/movie/subject/' + subject
+        res = requests.get(url)
+
+        print(res.json())
+
+        return JsonResponse(res.json())
