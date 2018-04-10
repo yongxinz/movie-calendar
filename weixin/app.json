@@ -1,7 +1,24 @@
 {
     "pages": [
-        "pages/index/index"
+        "pages/index/index",
+        "pages/home/home"
     ],
+    "tabBar": {
+        "color": "#dddddd",
+        "selectedColor": "#4dc47f",
+        "borderStyle": "black",
+        "backgroundColor": "#ffffff",
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "日历"
+            },
+            {
+                "pagePath": "pages/home/home",
+                "text": "我的"
+            }
+        ]
+    },
     "window": {
         "backgroundTextStyle": "white",
         "navigationBarBackgroundColor": "#FFF",

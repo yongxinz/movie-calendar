@@ -2,7 +2,7 @@
     <image src="../../image/loading.gif" mode="aspectFit" class="loading" style="opacity:{{loading_opacity}}"></image>
     <view animation="{{animationData}}" class="container-inner">
         <view class="images">
-            <image wx:if="{{ images }}" src="{{ images }}" mode="aspectFit" style="height: 420rpx"></image>
+            <image wx:if="{{ images }}" src="{{ images }}" mode="aspectFit"></image>
         </view>
 
         <view class="inner-date">

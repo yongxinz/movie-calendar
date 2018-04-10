@@ -1,12 +1,12 @@
 .calendar-container {
     position: relative;
     height: 100%;
-    padding: 20rpx;
+    padding: 10px;
 }
 
 .images {
-    /*width: 100%;*/
-    margin: 20rpx;
+    width: 100%;
+    padding: 10px;
     text-align: center;
 }
 
@@ -25,20 +25,20 @@
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    /*margin-bottom: 10px;*/
-    border: 2rpx solid #333;
+    margin-bottom: 10px;
+    border: 1px solid #333;
     opacity: 0;
 }
 
 .inner-date {
     flex-grow: 1;
-    /*padding: 15px;*/
-    /*margin-top: -15px;*/
+    padding: 15px;
+    margin-top: -15px;
     border-bottom: 1px solid #333;
 }
 
 .date-year-month {
-    margin: 10rpx;
+    padding: 5px;
     text-align: center;
 }
 
@@ -47,16 +47,16 @@
 /*}*/
 
 .year-month {
-    padding-right: 280rpx;
+    padding-right: 140px;
 }
 
 .date-day {
     text-align: center;
-    font-size: 200rpx;
+    font-size: 100px;
     font-family: 'Times New Roman', Times, serif;
     font-weight: 600;
     letter-spacing: -5px;
-    /*margin-top: -20px;*/
+    margin-top: -20px;
 }
 
 .date-show-year {
@@ -73,7 +73,8 @@
 }
 
 .inner-comment {
-    margin: 20rpx;
+    width: 100%;
+    padding: 10px;
     font-style: italic;
     color: #666;
 }
@@ -86,7 +87,7 @@
 .inner-movie {
     display: -webkit-flex;
     display: flex;
-    margin: 20rpx;
+    padding: 10px;
 }
 
 .movie-average {
