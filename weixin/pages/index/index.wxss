@@ -96,6 +96,10 @@
     margin-right: 10px;
 }
 
+.movie-info {
+    width: 75%;
+}
+
 .star {
     width: 16px;
     height: 16px;
@@ -105,4 +109,15 @@
 
 .show-year {
     font-size: 13px;
+}
+
+.detail {
+    height: 80rpx;
+    line-height: 80rpx
+}
+
+.detail-image {
+    width: 30px;
+    height: 30px;
+    vertical-align: middle;
 }

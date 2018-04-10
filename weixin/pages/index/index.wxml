@@ -30,6 +30,9 @@
                     </block>
                 </view>
             </view>
+            <view class="detail">
+                <image src="../../image/icon-detail.png" mode="aspectFit" class="detail-image"></image>
+            </view>
         </view>
     </view>
 </view>
