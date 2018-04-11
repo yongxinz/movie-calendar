@@ -1,109 +1,60 @@
-.calendar-container {
-    position: relative;
-    height: 100%;
-    padding: 10px;
+page {
+    background-color: #F0F0F0;
 }
 
-.images {
-    width: 100%;
-    padding: 10px;
-    text-align: center;
+.userinfo {
+    flex-direction: column;
+    background-color: white;
+    height: 200rpx;
+    margin-top: 16rpx;
+    margin-bottom: 35rpx;
 }
 
-.loading {
-    position: absolute;
-    left: 50%;
-    top: 50%;
+.userinfo-avatar {
     width: 120rpx;
     height: 120rpx;
-    margin-left: -60rpx;
-    margin-top: -60rpx;
+    margin-top: 40rpx;
+    margin-left: 68rpx;
+    margin-right: 24rpx;
+    border-radius: 50%;
+    float: left;
 }
 
-.container-inner {
-    display: -webkit-flex;
+.userinfo-name {
+    flex-direction:column;
     display: flex;
+    float: left;
+}
+
+.userinfo-nickname {
+    color: black;
+    font-size: 35rpx;
+    margin-top: 75rpx;
+}
+
+.userinfo-phone {
+    color: black;
+    font-size:20rpx;
+}
+
+.target {
+    height: 100rpx;
+    background-color: white;
     flex-direction: column;
-    min-height: 100%;
-    margin-bottom: 10px;
-    border: 1px solid #333;
-    opacity: 0;
+    font-size: 30rpx;
 }
 
-.inner-date {
-    flex-grow: 1;
-    padding: 15px;
-    margin-top: -15px;
-    border-bottom: 1px solid #333;
-}
-
-.date-year-month {
-    padding: 5px;
+.target-title {
+    float: left;
+    line-height: 100rpx;
     text-align: center;
+    margin-left: 60rpx;
 }
 
-/*.date-year-month text {*/
-    /*border-bottom: 1px solid #333;*/
-/*}*/
-
-.year-month {
-    padding-right: 140px;
-}
-
-.date-day {
+.target-value {
+    float: right;
+    line-height: 100rpx;
     text-align: center;
-    font-size: 100px;
-    font-family: 'Times New Roman', Times, serif;
-    font-weight: 600;
-    letter-spacing: -5px;
-    margin-top: -20px;
-}
-
-.date-show-year {
-    color: #777;
-    text-align: center;
-}
-
-.date-directors {
-    text-align: center;
-    color: #AAA;
-    font-size: 12px;
-    display: flex;
-    flex-direction: column;
-}
-
-.inner-comment {
-    width: 100%;
-    padding: 10px;
-    font-style: italic;
-    color: #666;
-}
-
-.inner-comment text {
-    font-size: 30px;
-    color: #888;
-}
-
-.inner-movie {
-    display: -webkit-flex;
-    display: flex;
-    padding: 10px;
-}
-
-.movie-average {
-    font-size: 40px;
-    line-height: 40px;
-    letter-spacing: -5px;
-    margin-right: 10px;
-}
-
-.star {
-    width: 16px;
-    height: 16px;
-    margin: 2px;
-    vertical-align: top;
-}
-
-.show-year {
-    font-size: 13px;
+    margin-right: 60rpx;
+    color: #999;
 }

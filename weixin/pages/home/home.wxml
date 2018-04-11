@@ -1,35 +1,29 @@
-<view class="calendar-container">
-    <image src="../../image/loading.gif" mode="aspectFit" class="loading" style="opacity:{{loading_opacity}}"></image>
-    <view animation="{{animationData}}" class="container-inner">
-        <view class="images">
-            <image wx:if="{{ images }}" src="{{ images }}" mode="aspectFit"></image>
-        </view>
+<view class="section">
+    <view class="userinfo">
+        <block wx:if="{{ is_ready && gData.userInfo != null }}">
+            <image class="userinfo-avatar" src="{{ gData.userInfo.avatarUrl }}" background-size="cover"></image>
+            <view class="userinfo-name">
+                <text class="flex-item userinfo-nickname">{{ gData.userInfo.nickName }}</text>
+                <text class="flex-item userinfo-phone">{{ gData.mobile }}</text>
+            </view>
+        </block>
 
-        <view class="inner-date">
-            <view class="date-year-month">
-                <text class="year-month">{{year}}年{{month}}月</text>
-                <text>星期{{week}}</text>
+        <block wx:if="{{ is_ready && gData.userInfo == null }}">
+            <view style="color: black; text-align: center; padding-top: 30rpx">
+                <text>{{ gData.mobile }}</text>
             </view>
-            <view class="date-day">{{day}}</view>
-            <view class="date-directors">
-                <text>导演：{{directors}}</text>
-                <text>主演：{{casts}}</text>
-            </view>
-        </view>
-        <view class="inner-comment">
-            <text>“</text>
-            {{comment}}
-        </view>
-        <view class="inner-movie">
-            <view class="movie-average">{{rating}}</view>
-            <view class="movie-info">
-                <text class="title">《{{title}}》</text><span class="show-year">{{show_year}}</span>
-                <view class="stars">
-                    <block wx:for="{{stars}}" wx:for-item="item" wx:key="{{ id }}">
-                        <image src="../../image/{{item}}-star.png" mode="aspectFit" class="star"></image>
-                    </block>
-                </view>
-            </view>
+        </block>
+    </view>
+
+    <view bindtap="updateTarget" data-url="./target/target?id={{ results.id }}&target={{ results.target }}"
+          class="target">
+        <view class="target-title">目标步数</view>
+        <view class="target-value">{{ results.target }}</view>
+    </view>
+
+    <view class="weui-flex">
+        <view class="weui-flex__item weui-btn-area">
+            <button class="weui-btn" type="warn" bindtap="cancelBind" style="font-size:16px;">退出登录</button>
         </view>
     </view>
 </view>
