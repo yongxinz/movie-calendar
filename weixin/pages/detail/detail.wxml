@@ -1,39 +1,29 @@
-<scroll-view class="">
-    <view class="film-header" style='background-image: url("{{ filminfo.images.medium }}")'>
-        <!-- <image src="{{filminfo.images.medium}}" style="bg-image"></image> -->
+<scroll-view>
+    <view class="film-header" style='background-image: url("{{ apiData.images.medium }}")'>
         <view class="header-content">
-            <image src="{{ filminfo.images.medium }}" class="film-image"></image>
+            <image src="{{ apiData.images.medium }}" class="film-image"></image>
             <view class="film-firstinfo">
-                <text class="film-title">{{ filminfo.title }}</text>
-                <!-- <text class="film-title">{{filminfo.original_title == filminfo.title?"":filminfo.original_title}}</text> -->
-                <view class="film-rate-container" wx:if="{{ filminfo.rating.average!=0}}" style="">
-                    <text class="film-rate">{{ filminfo.rating.average }}</text>
-                    <view class="film-star-container" style="">
-                        <view class="film-star {{ filminfo.rating.star }}"></view>
-                        <text class="film-ratecount">{{ filminfo.ratings_count }}人评价</text>
+                <text class="film-title">{{ apiData.title }}</text>
+                <view class="film-rate-container" wx:if="{{ apiData.rating != 0}}">
+                    <text class="film-rate">{{ apiData.rating.average }}</text>
+                    <view class="film-star-container">
+                        <view class="film-star {{ apiData.rating.star }}"></view>
+                        <text class="film-ratecount">{{ apiData.ratings_count }}人评价</text>
                     </view>
-
                 </view>
                 <text class="film-rate-tip" wx:else>暂无评分</text>
-
             </view>
         </view>
     </view>
+
     <view class="film-info">
-        <!-- <text wx:for-items="{{filminfo.genres}}"  wx:for-item="genres" >{{genres}}/</text>  -->
-        <view class="film-reinfo">{{ filmgenres }}</view>
-        <view class="film-reinfo">{{ filminfo.pubdate?filminfo.pubdate+"上映 ":""}}{{ filmcountry }}</view>
-        <view class="film-reinfo">{{ filmcast }}</view>
+        <view class="film-reinfo">{{ apiData.genres }}</view>
+        <view class="film-reinfo">{{ apiData.countries }} {{ apiData.year+" 上映"}}</view>
+        <view class="film-reinfo">{{ apiData.directors }} / {{ apiData.casts }}</view>
         <text></text>
         <button class="film-btn m-r-20" hover-class="film-btn-hover">想看</button>
         <button class="film-btn" hover-class="film-btn-hover">看过</button>
-        <!-- <view class="film-summary"> -->
-        <text class="film-summarytitle">{{ filminfo.title }}的剧情简介</text>
-        <text class="film-summarycontent">{{ filminfo.summary }}</text>
-        <!-- </view>   -->
-    </view>
-
-    <view class="film-comment">
-
+        <text class="film-summarytitle">剧情简介</text>
+        <text class="film-summarycontent">{{ apiData.summary }}</text>
     </view>
 </scroll-view>

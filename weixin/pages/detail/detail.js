@@ -2,10 +2,7 @@ const app = getApp();
 
 Page({
     data: {
-        filminfo: "",
-        filmgenres: "",
-        filmcountry: "",
-        filmcast: ""
+        apiData: {}
     },
 
     onLoad: function (options) {
@@ -22,35 +19,24 @@ Page({
 
         wx.showLoading({ title: '加载中...' });
         app.helper.getApi('detail', that.data.options).then(function (res) {
-            console.log(res)
+            let directors = [];
+            let casts = [];
+            for (let m in res.data.directors) {
+                directors.push(res.data.directors[m].name + '(导演) ')
+            }
+            for (let m in res.data.casts) {
+                casts.push(res.data.casts[m].name)
+            }
+            res.data.directors = directors;
+            res.data.casts = casts;
 
-            var data = res.data;
-            console.log(data);
-            // data.directors.map(function(item){
-            //  return item + "(导演)";
-
-            var directors = [];
-            var casts = [];
-            if (data.rating.average >= 9.5) {
-                data.rating.star = "star10";
+            if (res.data.rating.average >= 9.5) {
+                res.data.rating.star = 'star10'
             } else {
-                data.rating.star = "star" + Math.round(data.rating.average);
+                res.data.rating.star = 'star' + Math.round(res.data.rating.average)
             }
-            for (var item in data.directors) {
-                console.log(item);
-                directors.push(data.directors[item].name + "(导演) ");
-            }
-            console.log(data);
-            for (var item in data.casts) {
-                console.log(item);
-                casts.push(" " + data.casts[item].name + " ");
-            }
-            that.setData({
-                filminfo: data,
-                filmgenres: data.genres.join(" / "),
-                filmcountry: data.countries.join(" / "),
-                filmcast: directors.join("/") + "/" + casts.join("/")
-            });
+
+            that.setData({apiData: res.data});
             wx.hideLoading()
         })
     }
