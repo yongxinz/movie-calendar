@@ -18,7 +18,8 @@ module.exports.baseURL = baseURL;
 module.exports.apiMap = {
     login: '/passport/wx/login/',
     movie: '/movie/',
-    detail: '/movie/detail/'
+    detail: '/movie/detail/',
+    tag: '/movie/tag/'
 };
 
 module.exports.emitter = new EventEmitter();

@@ -7,8 +7,9 @@ import requests
 from rest_framework import viewsets
 from rest_framework.decorators import list_route
 from django.http import JsonResponse
+from rest_framework.response import Response
 
-from .models import Top, Movie
+from .models import Top, Movie, Tag
 from .serializers import TopSerializer
 
 
@@ -49,9 +50,32 @@ class TopViewSet(viewsets.ModelViewSet):
         ratings_count = res['ratings_count']
         summary = res['summary']
 
-        Movie.objects.update_or_create(subject=subject, defaults={'title': title, 'countries': countries, 'genres': genres,
-                                                                  'rating': rating, 'stars': stars, 'year': year, 'directors': directors,
-                                                                  'casts': casts, 'images': images, 'ratings_count': ratings_count,
-                                                                  'summary': summary})
+        movie, created = Movie.objects.update_or_create(subject=subject, defaults={'title': title, 'countries': countries, 'genres': genres,
+                                                                                   'rating': rating, 'stars': stars, 'year': year,
+                                                                                   'directors': directors,
+                                                                                   'casts': casts, 'images': images, 'ratings_count': ratings_count,
+                                                                                   'summary': summary})
+        obj, created = Tag.objects.get_or_create(users=self.request.user, movie=movie)
+        res['is_going'] = obj.is_going
+        res['is_done'] = obj.is_done
 
         return JsonResponse(res)
+
+    @list_route(methods=['get'])
+    def tag(self, request):
+        subject = self.request.query_params.get('subject')
+        type = self.request.query_params.get('type')
+
+        movie = Movie.objects.get(subject=subject)
+        obj = Tag.objects.get(users=self.request.user, movie=movie)
+
+        if type == 'Go':
+            is_going = False if obj.is_going else True
+            obj.is_going = is_going
+        else:
+            is_done = False if obj.is_done else True
+            obj.is_done = is_done
+
+        obj.save()
+
+        return Response({'results': {'Go': obj.is_going, 'Done': obj.is_done}})

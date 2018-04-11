@@ -2,6 +2,8 @@
 
 from django.db import models
 
+from passport.models import WeixinUsers
+
 
 class Top(models.Model):
     """
@@ -39,6 +41,20 @@ class Movie(models.Model):
     stars = models.IntegerField(u"电影评星", null=True, blank=True)
     ratings_count = models.IntegerField(u"评价人数", null=True, blank=True)
     summary = models.CharField(u"电影简介", max_length=1000, null=True, blank=True)
+    operate_time = models.DateTimeField(u"操作时间", auto_now=True)
+
+    class Meta:
+        ordering = ['-id']
+
+
+class Tag(models.Model):
+    """
+    标记
+    """
+    users = models.ForeignKey(WeixinUsers, on_delete=models.SET_NULL, null=True)
+    movie = models.ForeignKey(Movie, on_delete=models.SET_NULL, null=True)
+    is_going = models.BooleanField(default=False)
+    is_done = models.BooleanField(default=False)
     operate_time = models.DateTimeField(u"操作时间", auto_now=True)
 
     class Meta:

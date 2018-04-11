@@ -2,12 +2,15 @@ const app = getApp();
 
 Page({
     data: {
-        apiData: {}
+        apiData: {},
+        subject: '',
+        buttonGo: '想看',
+        buttonDone: '看过'
     },
 
     onLoad: function (options) {
         let that = this;
-        that.setData({options: options});
+        that.setData({options: options, subject: options.subject});
     },
 
     onShow: function () {
@@ -37,7 +40,39 @@ Page({
             }
 
             that.setData({apiData: res.data});
+
+            if (res.data.is_going) {
+                that.setData({'buttonGo': '已想看'})
+            } else {
+                that.setData({'buttonGo': '想看'})
+            }
+
+            if (res.data.is_done) {
+                that.setData({'buttonDone': '已看过'})
+            } else {
+                that.setData({'buttonDone': '看过'})
+            }
+
             wx.hideLoading()
+        })
+    },
+
+    movieTag: function (e) {
+        let that = this;
+        let type = e.currentTarget.dataset.type;
+
+        app.helper.getApi('tag', {'subject': that.data.subject, 'type': type}).then(function (res) {
+            if (res.data.results.Go) {
+                that.setData({'buttonGo': '已想看'})
+            } else {
+                that.setData({'buttonGo': '想看'})
+            }
+
+            if (res.data.results.Done) {
+                that.setData({'buttonDone': '已看过'})
+            } else {
+                that.setData({'buttonDone': '看过'})
+            }
         })
     }
 });
