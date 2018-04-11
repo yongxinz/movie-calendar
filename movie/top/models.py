@@ -3,7 +3,7 @@
 from django.db import models
 
 
-class Movie(models.Model):
+class Top(models.Model):
     """
     电影
     """

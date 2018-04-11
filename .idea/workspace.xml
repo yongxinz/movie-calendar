@@ -2,23 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a88560-719f-40eb-91b7-371f95af7f9f" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/weixin/image/full-star.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/weixin/image/half-star.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/weixin/image/icon-detail.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/weixin/image/loading.gif" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/weixin/image/no-star.png" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/weixin/utils/domvas.min.js" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/movie/settings/base.py" afterPath="$PROJECT_DIR$/movie/movie/settings/base.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/movie/settings/local_.py" afterPath="$PROJECT_DIR$/movie/movie/settings/local_.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/static/image/icon_home.png" afterPath="$PROJECT_DIR$/weixin/static/image/icon_home.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/static/image/icon_home_select.png" afterPath="$PROJECT_DIR$/weixin/static/image/icon_home_select.png" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/static/image/icon_index.png" afterPath="$PROJECT_DIR$/weixin/static/image/icon_index.png" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/movie/urls.py" afterPath="$PROJECT_DIR$/movie/movie/urls.py" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/top/api.py" afterPath="$PROJECT_DIR$/movie/top/api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/app.js" afterPath="$PROJECT_DIR$/weixin/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/app.json" afterPath="$PROJECT_DIR$/weixin/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/pages/detail/detail.js" afterPath="$PROJECT_DIR$/weixin/pages/detail/detail.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/pages/index/index.js" afterPath="$PROJECT_DIR$/weixin/pages/index/index.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/pages/index/index.wxml" afterPath="$PROJECT_DIR$/weixin/pages/index/index.wxml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/utils/config.js" afterPath="$PROJECT_DIR$/weixin/utils/config.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/utils/helper_business.js" afterPath="$PROJECT_DIR$/weixin/utils/helper_business.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/top/filter.py" afterPath="$PROJECT_DIR$/movie/top/filter.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/top/models.py" afterPath="$PROJECT_DIR$/movie/top/models.py" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/top/serializers.py" afterPath="$PROJECT_DIR$/movie/top/serializers.py" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -104,29 +95,47 @@
       <file leaf-file-name="api.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/movie/top/api.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="540">
-              <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/movie/passport/models.py">
-          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="252">
-              <caret line="16" column="0" lean-forward="false" selection-start-line="16" selection-start-column="0" selection-end-line="16" selection-end-column="0" />
-              <folding />
+              <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+              <folding>
+                <element signature="e#24#63#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="app.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weixin/app.js">
+      <file leaf-file-name="urls.py" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/movie/movie/urls.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="0" lean-forward="false" selection-start-line="21" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-              <folding />
+            <state relative-caret-position="540">
+              <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+              <folding>
+                <element signature="e#654#695#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="filter.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/movie/top/filter.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="72">
+              <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#21#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="serializers.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/movie/top/serializers.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="108">
+              <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+              <folding>
+                <element signature="e#15#53#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,18 +153,28 @@
       <file leaf-file-name="config.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weixin/utils/config.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="378">
-              <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
+            <state relative-caret-position="360">
+              <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weixin/pages/index/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1280">
-              <caret line="129" column="35" lean-forward="true" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
+            <state relative-caret-position="424">
+              <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="models.py" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/movie/top/models.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="90">
+              <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="9" />
               <folding />
             </state>
           </provider>
@@ -165,27 +184,7 @@
         <entry file="file://$PROJECT_DIR$/weixin/pages/index/index.wxml">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="450">
-              <caret line="25" column="98" lean-forward="true" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="auth.py" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/movie/tools/auth.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="144">
-              <caret line="11" column="55" lean-forward="false" selection-start-line="11" selection-start-column="55" selection-end-line="11" selection-end-column="55" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="helper_business.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weixin/utils/helper_business.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1555">
-              <caret line="104" column="42" lean-forward="false" selection-start-line="104" selection-start-column="42" selection-end-line="104" selection-end-column="42" />
+              <caret line="25" column="98" lean-forward="false" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
               <folding />
             </state>
           </provider>
@@ -220,8 +219,6 @@
         <option value="$PROJECT_DIR$/pages/index/index.wxss" />
         <option value="$PROJECT_DIR$/pages/index/index.wxml" />
         <option value="$PROJECT_DIR$/pages/index/index.js" />
-        <option value="$PROJECT_DIR$/movie/top/serializers.py" />
-        <option value="$PROJECT_DIR$/movie/top/models.py" />
         <option value="$PROJECT_DIR$/movie/gunicorn.conf.py" />
         <option value="$PROJECT_DIR$/movie/requirements.txt" />
         <option value="$PROJECT_DIR$/weixin/pages/index/index.wxss" />
@@ -247,14 +244,17 @@
         <option value="$PROJECT_DIR$/movie/movie/settings/local.py" />
         <option value="$PROJECT_DIR$/movie/passport/models.py" />
         <option value="$PROJECT_DIR$/movie/passport/api.py" />
-        <option value="$PROJECT_DIR$/movie/movie/urls.py" />
         <option value="$PROJECT_DIR$/weixin/app.js" />
         <option value="$PROJECT_DIR$/weixin/utils/helper_business.js" />
         <option value="$PROJECT_DIR$/movie/tools/auth.py" />
         <option value="$PROJECT_DIR$/weixin/pages/index/index.js" />
         <option value="$PROJECT_DIR$/weixin/pages/detail/detail.js" />
+        <option value="$PROJECT_DIR$/movie/top/models.py" />
+        <option value="$PROJECT_DIR$/movie/top/filter.py" />
+        <option value="$PROJECT_DIR$/movie/top/serializers.py" />
         <option value="$PROJECT_DIR$/movie/top/api.py" />
         <option value="$PROJECT_DIR$/weixin/utils/config.js" />
+        <option value="$PROJECT_DIR$/movie/movie/urls.py" />
       </list>
     </option>
   </component>
@@ -836,24 +836,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/movie/top/filter.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding>
-            <element signature="e#0#21#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/movie/top/serializers.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weixin/pages/index/index.wxss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="788">
@@ -930,14 +912,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
           <caret line="1" column="33" lean-forward="false" selection-start-line="1" selection-start-column="33" selection-end-line="1" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/movie/top/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1048,16 +1022,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/movie/movie/urls.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="30" column="0" lean-forward="false" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="e#654#695#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/movie/passport/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
@@ -1137,35 +1101,75 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/movie/top/api.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="540">
-          <caret line="41" column="0" lean-forward="true" selection-start-line="41" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/utils/config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="2" lean-forward="true" selection-start-line="21" selection-start-column="2" selection-end-line="21" selection-end-column="2" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weixin/pages/index/index.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="450">
-          <caret line="25" column="98" lean-forward="true" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
+          <caret line="25" column="98" lean-forward="false" selection-start-line="25" selection-start-column="98" selection-end-line="25" selection-end-column="98" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/weixin/pages/index/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1280">
-          <caret line="129" column="35" lean-forward="true" selection-start-line="129" selection-start-column="35" selection-end-line="129" selection-end-column="35" />
+        <state relative-caret-position="424">
+          <caret line="49" column="27" lean-forward="true" selection-start-line="49" selection-start-column="27" selection-end-line="49" selection-end-column="27" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie/top/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="6" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie/top/filter.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="72">
+          <caret line="4" column="9" lean-forward="false" selection-start-line="4" selection-start-column="9" selection-end-line="4" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#21#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie/top/serializers.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="9" lean-forward="false" selection-start-line="6" selection-start-column="9" selection-end-line="6" selection-end-column="9" />
+          <folding>
+            <element signature="e#15#53#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie/top/api.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="252">
+          <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="9" selection-end-line="14" selection-end-column="9" />
+          <folding>
+            <element signature="e#24#63#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/utils/config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="20" column="28" lean-forward="true" selection-start-line="20" selection-start-column="28" selection-end-line="20" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/movie/movie/urls.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="540">
+          <caret line="30" column="0" lean-forward="true" selection-start-line="30" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+          <folding>
+            <element signature="e#654#695#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

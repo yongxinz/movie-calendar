@@ -6,16 +6,15 @@ import random
 import requests
 from rest_framework import viewsets
 from rest_framework.decorators import list_route
-from rest_framework.response import Response
 from django.http import JsonResponse
 
-from .models import Movie
-from .serializers import MovieSerializer
+from .models import Top
+from .serializers import TopSerializer
 
 
-class MovieViewSet(viewsets.ModelViewSet):
-    queryset = Movie.objects.all()
-    serializer_class = MovieSerializer
+class TopViewSet(viewsets.ModelViewSet):
+    queryset = Top.objects.all()
+    serializer_class = TopSerializer
 
     def get_queryset(self):
         id = self.request.query_params.get('id', '')
