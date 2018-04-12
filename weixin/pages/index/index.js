@@ -1,4 +1,4 @@
-var wezrender = require('../../utils/wezrender.min.js')
+var wezrender = require('../../utils/wezrender.min.js');
 
 var app = getApp();
 
@@ -21,7 +21,6 @@ Page({
         'subject': ''
     },
 
-    // 页面初始化
     onLoad: function (options) {
         if (options.id !== undefined) {
             this.setData({ id: options.id });
@@ -46,11 +45,10 @@ Page({
         app.helper.waitUserSid(this.getApiData)
     },
 
-    //显示日期，年月日
     showDate: function () {
         var today = new Date(), _this = this, year = today.getFullYear() + '', i = 0, chineseYear = '',
             week = today.getDay();
-        //将年份转换为中文
+
         do {
             chineseYear = chineseYear + app.chineseDate.years[year.charAt(i)];
             i++;
@@ -62,7 +60,7 @@ Page({
         } else {
             week_ = app.chineseDate.years[week]
         }
-        //设置数据
+
         _this.setData({
             'year': chineseYear,
             'month': app.chineseDate.months[today.getMonth()],
@@ -94,9 +92,7 @@ Page({
         })
     },
 
-    //计算行星显示规则
     starCount: function (originStars) {
-        //计算星星显示需要的数据，用数组stars存储五个值，分别对应每个位置的星星是全星、半星还是空星
         var starNum = originStars / 10, stars = [], i = 0;
         do {
             if (starNum >= 1) {
@@ -113,7 +109,6 @@ Page({
         return stars;
     },
 
-    //加载动画
     loading: function () {
         var animation = wx.createAnimation({
             duration: 1000,

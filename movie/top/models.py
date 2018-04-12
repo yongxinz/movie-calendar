@@ -51,7 +51,7 @@ class Tag(models.Model):
     """
     标记
     """
-    users = models.ForeignKey(WeixinUsers, on_delete=models.SET_NULL, null=True)
+    user = models.ForeignKey(WeixinUsers, on_delete=models.SET_NULL, null=True)
     movie = models.ForeignKey(Movie, on_delete=models.SET_NULL, null=True)
     is_going = models.BooleanField(default=False)
     is_done = models.BooleanField(default=False)

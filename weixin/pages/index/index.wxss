@@ -5,7 +5,6 @@
 }
 
 .images {
-    /*width: 100%;*/
     margin: 20rpx;
     text-align: center;
 }
@@ -25,15 +24,12 @@
     display: flex;
     flex-direction: column;
     min-height: 100%;
-    /*margin-bottom: 10px;*/
     border: 2rpx solid #333;
     opacity: 0;
 }
 
 .inner-date {
     flex-grow: 1;
-    /*padding: 15px;*/
-    /*margin-top: -15px;*/
     border-bottom: 1px solid #333;
 }
 
@@ -41,10 +37,6 @@
     margin: 10rpx;
     text-align: center;
 }
-
-/*.date-year-month text {*/
-    /*border-bottom: 1px solid #333;*/
-/*}*/
 
 .year-month {
     padding-right: 280rpx;
@@ -56,7 +48,8 @@
     font-family: 'Times New Roman', Times, serif;
     font-weight: 600;
     letter-spacing: -5px;
-    /*margin-top: -20px;*/
+    margin-top: -55rpx;
+    margin-bottom: -55rpx;
 }
 
 .date-show-year {

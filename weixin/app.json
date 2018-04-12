@@ -2,7 +2,8 @@
     "pages": [
         "pages/index/index",
         "pages/detail/detail",
-        "pages/home/home"
+        "pages/home/home",
+        "pages/home/retain/retain"
     ],
     "tabBar": {
         "color": "#dddddd",

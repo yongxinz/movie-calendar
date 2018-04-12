@@ -10,7 +10,9 @@ from django.http import JsonResponse
 from rest_framework.response import Response
 
 from .models import Top, Movie, Tag
-from .serializers import TopSerializer
+from .serializers import TopSerializer, TagSerializer
+from .filter import TagFilter
+from tools.rest_helper import YMMixin
 
 
 class TopViewSet(viewsets.ModelViewSet):
@@ -55,7 +57,7 @@ class TopViewSet(viewsets.ModelViewSet):
                                                                                    'directors': directors,
                                                                                    'casts': casts, 'images': images, 'ratings_count': ratings_count,
                                                                                    'summary': summary})
-        obj, created = Tag.objects.get_or_create(users=self.request.user, movie=movie)
+        obj, created = Tag.objects.get_or_create(user=self.request.user, movie=movie)
         res['is_going'] = obj.is_going
         res['is_done'] = obj.is_done
 
@@ -67,7 +69,7 @@ class TopViewSet(viewsets.ModelViewSet):
         type = self.request.query_params.get('type')
 
         movie = Movie.objects.get(subject=subject)
-        obj = Tag.objects.get(users=self.request.user, movie=movie)
+        obj = Tag.objects.get(user=self.request.user, movie=movie)
 
         if type == 'Go':
             is_going = False if obj.is_going else True
@@ -79,3 +81,9 @@ class TopViewSet(viewsets.ModelViewSet):
         obj.save()
 
         return Response({'results': {'Go': obj.is_going, 'Done': obj.is_done}})
+
+
+class TagViewSet(YMMixin, viewsets.ModelViewSet):
+    queryset = Tag.objects.all()
+    serializer_class = TagSerializer
+    filter_class = TagFilter

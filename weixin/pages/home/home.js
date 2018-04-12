@@ -33,24 +33,5 @@ Page({
 
     onShow: function () {
         // app.helper.waitUserSid(this.getApiData);
-    },
-
-    updateUsers: function () {
-        let that = this;
-
-        app.helper.putApi('users', that.data.gData, this.data.results.id + '/nickname/').then(function (res) {
-            console.log(res)
-        })
-    },
-
-    getApiData: function () {
-        let that = this;
-
-        app.helper.getApi('users').then(function (res) {
-            that.setData({results: res.data.results[0]});
-            that.setData({'gData.mobile': res.data.results[0].mobile});
-        }).then(function (res) {
-            app.helper.waitUserSid(that.updateUsers);
-        });
     }
 });
