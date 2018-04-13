@@ -61,18 +61,22 @@ Page({
         let that = this;
         let type = e.currentTarget.dataset.type;
 
-        app.helper.getApi('tag', {'subject': that.data.subject, 'type': type}).then(function (res) {
-            if (res.data.results.Go) {
-                that.setData({'buttonGo': '已想看'})
-            } else {
-                that.setData({'buttonGo': '想看'})
-            }
+        if (type === 'Go' && that.data.buttonDone === '已看过') {
+            wx.showToast({title: '电影已经看过了。'})
+        } else {
+            app.helper.getApi('tag', {'subject': that.data.subject, 'type': type}).then(function (res) {
+                if (res.data.results.Go) {
+                    that.setData({'buttonGo': '已想看'})
+                } else {
+                    that.setData({'buttonGo': '想看'})
+                }
 
-            if (res.data.results.Done) {
-                that.setData({'buttonDone': '已看过'})
-            } else {
-                that.setData({'buttonDone': '看过'})
-            }
-        })
+                if (res.data.results.Done) {
+                    that.setData({'buttonDone': '已看过'})
+                } else {
+                    that.setData({'buttonDone': '看过'})
+                }
+            })
+        }
     }
 });

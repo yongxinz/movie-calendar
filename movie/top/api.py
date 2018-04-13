@@ -78,6 +78,9 @@ class TopViewSet(viewsets.ModelViewSet):
             is_done = False if obj.is_done else True
             obj.is_done = is_done
 
+        if obj.is_done:
+            obj.is_going = False
+
         obj.save()
 
         return Response({'results': {'Go': obj.is_going, 'Done': obj.is_done}})
