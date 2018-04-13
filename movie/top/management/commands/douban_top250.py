@@ -6,7 +6,7 @@ from bs4 import BeautifulSoup
 
 from django.core.management.base import BaseCommand
 
-from top.models import Movie
+from top.models import Top
 
 
 class Command(BaseCommand):
@@ -64,8 +64,8 @@ class Command(BaseCommand):
 
                 print(subject[0], title, link, rating, comment, directors, casts, year, images, stars)
 
-                Movie.objects.update_or_create(subject=subject[0], defaults={'title': title, 'link': link,
-                                                                             'rating': rating, 'comment': comment,
-                                                                             'year': year, 'directors': directors,
-                                                                             'casts': casts, 'images': images,
-                                                                             'stars': int(stars)})
+                Top.objects.update_or_create(subject=subject[0], defaults={'title': title, 'link': link,
+                                                                           'rating': rating, 'comment': comment,
+                                                                           'year': year, 'directors': directors,
+                                                                           'casts': casts, 'images': images,
+                                                                           'stars': int(stars)})
