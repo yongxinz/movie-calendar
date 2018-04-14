@@ -25,6 +25,18 @@ class Command(BaseCommand):
             movies = soup.find_all('div', class_="item")
 
             for info in movies:
+                detail = info.select('.bd p')[0].text.strip().split('\n')
+                detail_ = detail[0].split(':')
+
+                directors = ''
+                casts = ''
+                if len(detail_) == 3:
+                    directors = detail_[1].split('主演')[0].strip()
+                    casts = detail_[2].strip()
+
+                if directors == '' or casts == '':
+                    continue
+
                 # 获得电影的中文名
                 title = info.find('span', class_='title').text  # find()只找到一个，结果以树结构返回
 
@@ -40,15 +52,6 @@ class Command(BaseCommand):
                 subject = re.findall('\d+', link)
 
                 images = info.find('img').get('src')
-
-                detail = info.select('.bd p')[0].text.strip().split('\n')
-                detail_ = detail[0].split(':')
-
-                directors = ''
-                casts = ''
-                if len(detail_) == 3:
-                    directors = detail_[1].split('主演')[0].strip()
-                    casts = detail_[2].strip()
 
                 year = detail[1].split('/')[0].strip()
 

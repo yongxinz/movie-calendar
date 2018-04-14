@@ -1,16 +1,17 @@
 <view class="section">
     <view class="userinfo">
-        <block wx:if="{{ is_ready && gData.userInfo != null }}">
+        <block wx:if="{{ gData.userInfo != null }}">
             <image class="userinfo-avatar" src="{{ gData.userInfo.avatarUrl }}" background-size="cover"></image>
             <view class="userinfo-name">
                 <text class="flex-item userinfo-nickname">{{ gData.userInfo.nickName }}</text>
-                <text class="flex-item userinfo-phone">{{ gData.mobile }}</text>
             </view>
         </block>
 
-        <block wx:if="{{ is_ready && gData.userInfo == null }}">
-            <view style="color: black; text-align: center; padding-top: 30rpx">
-                <text>{{ gData.mobile }}</text>
+        <block wx:if="{{ gData.userInfo == null }}">
+            <view style="text-align: center;">
+                <button open-type="getUserInfo" bindgetuserinfo="bindGetUserinfo" size="mini" style="margin-top: 75rpx">
+                    授权使用昵称和头像
+                </button>
             </view>
         </block>
     </view>

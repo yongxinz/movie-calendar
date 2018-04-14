@@ -1,10 +1,7 @@
-/* pages/movie/movie.wxss */
 .film-image {
     width: 100px;
     height: 147px;
     z-index: 1000;
-    /* position:absolute; */
-    /* top:60px; */
     left: 20px;
     position: relative;
     overflow: visible;
@@ -29,11 +26,10 @@
     content: "";
     position: absolute;
     top: 0;
-    bottom: 0px;
+    bottom: 0;
     left: 0;
     right: 0;
     background-color: rgba(0, 0, 0, 0.7);
-    /* z-index:3; */
 }
 
 .film-title {
@@ -49,7 +45,6 @@
 }
 
 .film-rate-container {
-
     display: flex;
     flex-direction: row
 }
@@ -81,7 +76,6 @@
 }
 
 .film-reinfo {
-    /* letter-spacing: 1px; */
     word-spacing: 0.02rem;
     font-size: 0.65rem;
     line-height: 1.8;
@@ -101,7 +95,9 @@
 .film-summarycontent {
     font-size: 0.75rem;
     display: block;
-    line-height: 1.7
+    line-height: 1.7;
+    box-sizing: border-box;
+    text-align: justify;
 }
 
 .film-btn {
