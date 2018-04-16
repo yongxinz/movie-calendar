@@ -4,27 +4,26 @@ var app = getApp();
 
 Page({
     data: {
-        'year': 0,
-        'month': 0,
-        'day': 0,
-        'week': 0,
-        'show_year': 0,
-        'directors': '',
-        'title': '',
-        'rating': '',
-        'stars': '',
-        'loading_opacity': 1,
-        'animationData': '',
-        'images': '',
-        'casts': '',
-        'id': '',
-        'subject': ''
+        windowWidth: 0,
+        windowHeight: 0,
+        scrollLeft: 0,
+        apiData: {id: ''}
     },
 
     onLoad: function (options) {
         if (options.id !== undefined) {
-            this.setData({ id: options.id });
+            this.setData({id: options.id});
         }
+
+        let that = this;
+        wx.getSystemInfo({
+            success: function (res) {
+                that.setData({
+                    windowWidth: res.windowWidth,
+                    windowHeight: res.windowHeight
+                });
+            }
+        });
 
         var zr = wezrender.zrender.init("line-canvas-1", 375, 600);
         var circle = new wezrender.graphic.Image({
@@ -72,52 +71,21 @@ Page({
     getApiData: function () {
         let that = this;
 
-        app.helper.getApi('movie', {'id': that.data.id}).then(function (res) {
-            let movieData = res.data.results[0];
-            let renderData = {
-                'show_year': movieData.year,
-                'directors': movieData.directors,
-                'title': movieData.title,
-                'comment': movieData.comment,
-                'rating': movieData.rating,
-                'stars': that.starCount(movieData.stars),
-                'images': movieData.images,
-                'casts': movieData.casts,
-                'loading_opacity': 0,
-                'id': movieData.id,
-                'subject': movieData.subject
-            };
-            that.setData(renderData);
-            that.loading();
+        wx.showLoading({ title: '加载中...' });
+        app.helper.getApi('movie', {'id': that.data.apiData.id}).then(function (res) {
+            that.setData({apiData: res.data.results});
+            wx.hideLoading();
         })
     },
 
-    starCount: function (originStars) {
-        var starNum = originStars / 10, stars = [], i = 0;
-        do {
-            if (starNum >= 1) {
-                stars[i] = 'full';
-            } else if (starNum >= 0.5) {
-                stars[i] = 'half';
-            } else {
-                stars[i] = 'no';
-            }
-            starNum--;
-            i++;
-        } while (i < 5);
+    scroll: function (e) {
+        var that = this;
+        var scrollLeft = e.detail.scrollLeft;
+        var curIndex = Math.round(scrollLeft / that.data.windowWidth);
 
-        return stars;
-    },
-
-    loading: function () {
-        var animation = wx.createAnimation({
-            duration: 1000,
-            timingFunction: 'ease'
-        });
-        animation.opacity(1).step();
-        this.setData({
-            animationData: animation.export()
-        })
+        if ((scrollLeft - (curIndex - 1) * that.data.windowWidth) >= that.data.windowWidth / 2) {
+            that.setData({scrollLeft: curIndex * that.data.windowWidth})
+        }
     },
 
     onShareAppMessage: function () {
@@ -129,6 +97,6 @@ Page({
 
     movieDetail: function (e) {
         let subject = e.currentTarget.dataset.subject;
-        wx.navigateTo({ url: '../detail/detail?subject=' + subject })
+        wx.navigateTo({url: '../detail/detail?subject=' + subject })
     }
 });

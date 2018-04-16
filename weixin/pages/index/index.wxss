@@ -1,7 +1,12 @@
 .calendar-container {
-    position: relative;
-    height: 100%;
+    /*width: 100%;*/
+    /*height: 100%;*/
     padding: 20rpx;
+    display: inline-block;
+}
+
+.scroll-view_H {
+    white-space: nowrap;
 }
 
 .images {
@@ -25,7 +30,6 @@
     flex-direction: column;
     min-height: 100%;
     border: 2rpx solid #333;
-    opacity: 0;
 }
 
 .inner-date {
@@ -69,6 +73,7 @@
     margin: 20rpx;
     font-style: italic;
     color: #666;
+    white-space: normal;
 }
 
 .inner-comment text {

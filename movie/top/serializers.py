@@ -5,6 +5,23 @@ from .models import Top, Tag
 
 
 class TopSerializer(serializers.ModelSerializer):
+    stars = serializers.SerializerMethodField()
+
+    def get_stars(self, obj):
+        star_num = obj.stars / 10
+        stars = ['no', 'no', 'no', 'no', 'no']
+        i = 0
+
+        while i < 5:
+            if star_num >= 1:
+                stars[i] = 'full'
+            elif star_num >= 0.5:
+                stars[i] = 'half'
+
+            star_num -= 1
+            i += 1
+
+        return stars
 
     class Meta:
         model = Top

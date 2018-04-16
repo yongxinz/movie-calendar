@@ -20,7 +20,7 @@ class TopViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         id = self.request.query_params.get('id', '')
         if id == '':
-            queryset = self.queryset.order_by('?')[0:1]
+            queryset = self.queryset.order_by('?')[0:15]
         else:
             queryset = self.queryset.filter(id=id)
 
