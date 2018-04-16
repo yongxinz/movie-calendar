@@ -10,6 +10,7 @@
 }
 
 .images {
+    height: 420rpx;
     margin: 20rpx;
     text-align: center;
 }
