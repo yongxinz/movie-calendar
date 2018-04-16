@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 
-import random
-
 import requests
 from rest_framework import viewsets
 from rest_framework.decorators import list_route
-from django.http import JsonResponse
 from rest_framework.response import Response
+from django.http import JsonResponse
 
 from .models import Top, Movie, Tag
 from .serializers import TopSerializer, TagSerializer
@@ -22,9 +20,7 @@ class TopViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         id = self.request.query_params.get('id', '')
         if id == '':
-            count = self.queryset.count()
-            random_num = random.randint(1, count)
-            queryset = self.queryset.filter(id=random_num)
+            queryset = self.queryset.order_by('?')[0:1]
         else:
             queryset = self.queryset.filter(id=id)
 
