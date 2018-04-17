@@ -6,7 +6,6 @@ Page({
     data: {
         windowWidth: 0,
         windowHeight: 0,
-        scrollLeft: 0,
         apiData: {id: ''}
     },
 
@@ -76,16 +75,6 @@ Page({
             that.setData({apiData: res.data.results});
             wx.hideLoading();
         })
-    },
-
-    scroll: function (e) {
-        var that = this;
-        var scrollLeft = e.detail.scrollLeft;
-        var curIndex = Math.round(scrollLeft / that.data.windowWidth);
-
-        if ((scrollLeft - (curIndex - 1) * that.data.windowWidth) >= that.data.windowWidth / 2) {
-            that.setData({scrollLeft: curIndex * that.data.windowWidth})
-        }
     },
 
     onShareAppMessage: function () {

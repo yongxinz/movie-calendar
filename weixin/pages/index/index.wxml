@@ -1,43 +1,45 @@
-<scroll-view class="scroll-view_H" scroll-x="true" scroll-left="{{ scrollLeft }}"
-             bindscroll="scroll">
+<swiper style="height: {{ windowHeight }}px">
     <block wx:for="{{ apiData }}" wx:key="index" wx:for-index="id" wx:for-item="item">
-        <view class="calendar-container" style="width: {{ windowWidth }}px;height: {{ windowHeight }}px;">
-            <view class="container-inner">
-                <view class="images">
-                    <image src="{{ item.images }}" mode="aspectFit" style="height: 420rpx"></image>
-                </view>
+        <swiper-item>
+            <view class="calendar-container" style="width: {{ windowWidth }}px;height: {{ windowHeight }}px;">
+                <view class="container-inner">
+                    <view class="images">
+                        <image src="{{ item.images }}" mode="aspectFit" style="height: 420rpx"></image>
+                    </view>
 
-                <view class="inner-date">
-                    <view class="date-year-month">
-                        <text class="year-month">{{ year }}年{{ month }}月</text>
-                        <text>星期{{ week }}</text>
-                    </view>
-                    <view class="date-day">{{ day }}</view>
-                    <view class="date-directors">
-                        <text>导演：{{ item.directors }}</text>
-                        <text>主演：{{ item.casts }}</text>
-                    </view>
-                </view>
-                <view class="inner-comment">
-                    <text>“</text>
-                    {{ item.comment }}
-                </view>
-                <view class="inner-movie">
-                    <view class="movie-average">{{ item.rating }}</view>
-                    <view class="movie-info">
-                        <text class="title">《{{ item.title }}》</text>
-                        <span class="show-year">{{ item.year }}</span>
-                        <view class="stars">
-                            <block wx:for="{{ item.stars }}" wx:for-item="item" wx:key="{{ id }}">
-                                <image src="../../static/image/{{ item }}-star.png" mode="aspectFit" class="star"></image>
-                            </block>
+                    <view class="inner-date">
+                        <view class="date-year-month">
+                            <text class="year-month">{{ year }}年{{ month }}月</text>
+                            <text>星期{{ week }}</text>
+                        </view>
+                        <view class="date-day">{{ day }}</view>
+                        <view class="date-directors">
+                            <text>导演：{{ item.directors }}</text>
+                            <text>主演：{{ item.casts }}</text>
                         </view>
                     </view>
-                    <view class="detail" bindtap='movieDetail' data-subject="{{ item.subject }}">
-                        <image src="../../static/image/icon-detail.png" mode="aspectFit" class="detail-image"></image>
+                    <view class="inner-comment">
+                        <text>“</text>
+                        {{ item.comment }}
+                    </view>
+                    <view class="inner-movie">
+                        <view class="movie-average">{{ item.rating }}</view>
+                        <view class="movie-info">
+                            <text class="title">《{{ item.title }}》</text>
+                            <span class="show-year">{{ item.year }}</span>
+                            <view class="stars">
+                                <block wx:for="{{ item.stars }}" wx:for-item="item" wx:key="{{ id }}">
+                                    <image src="../../static/image/{{ item }}-star.png" mode="aspectFit" class="star"></image>
+                                </block>
+                            </view>
+                        </view>
+                        <view class="detail" bindtap='movieDetail' data-subject="{{ item.subject }}">
+                            <image src="../../static/image/icon-detail.png" mode="aspectFit" class="detail-image"></image>
+                        </view>
                     </view>
                 </view>
             </view>
-        </view>
+        </swiper-item>
+
     </block>
-</scroll-view>
+</swiper>
