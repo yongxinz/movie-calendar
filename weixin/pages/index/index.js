@@ -6,6 +6,8 @@ Page({
     data: {
         windowWidth: 0,
         windowHeight: 0,
+        current: 14,
+        is_today: false,
         apiData: {id: ''}
     },
 
@@ -78,8 +80,15 @@ Page({
     },
 
     bindChange: function (e) {
-        var before = new Date()-1000*60*60*24*(14-e.detail.current);
+        var before = new Date()-1000*60*60*24*(this.data.current-e.detail.current);
         var beforeDate = new Date(before);
+
+        if (beforeDate - new Date() !== 0) {
+            this.setData({is_today: true});
+        } else {
+            this.setData({is_today: false});
+        }
+
         this.showDate(beforeDate);
     },
 
