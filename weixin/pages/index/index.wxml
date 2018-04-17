@@ -1,4 +1,4 @@
-<swiper style="height: {{ windowHeight }}px">
+<swiper style="height: {{ windowHeight }}px" current="14" bindchange="bindChange">
     <block wx:for="{{ apiData }}" wx:key="index" wx:for-index="id" wx:for-item="item">
         <swiper-item>
             <view class="calendar-container" style="width: {{ windowWidth }}px;height: {{ windowHeight }}px;">

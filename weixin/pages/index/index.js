@@ -39,12 +39,12 @@ Page({
     },
 
     onShow: function () {
-        this.showDate();
+        this.showDate(new Date());
         app.helper.waitUserSid(this.getApiData)
     },
 
-    showDate: function () {
-        var today = new Date(), _this = this, year = today.getFullYear() + '', i = 0, chineseYear = '',
+    showDate: function (day) {
+        var today = day, _this = this, year = today.getFullYear() + '', i = 0, chineseYear = '',
             week = today.getDay();
 
         do {
@@ -75,6 +75,12 @@ Page({
             that.setData({apiData: res.data.results});
             wx.hideLoading();
         })
+    },
+
+    bindChange: function (e) {
+        var before = new Date()-1000*60*60*24*(14-e.detail.current);
+        var beforeDate = new Date(before);
+        this.showDate(beforeDate);
     },
 
     onShareAppMessage: function () {
