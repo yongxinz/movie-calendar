@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
-from itertools import chain
 
 import requests
 from rest_framework import viewsets
