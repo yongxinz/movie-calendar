@@ -7,6 +7,8 @@ Page({
         windowWidth: 0,
         windowHeight: 0,
         current: 14,
+        index: 14,
+        id: '',
         is_today: false,
         apiData: {id: ''}
     },
@@ -38,11 +40,13 @@ Page({
             }
         });
         zr.add(circle);
+
+        this.showDate(new Date());
+        app.helper.waitUserSid(this.getApiData);
     },
 
     onShow: function () {
-        this.showDate(new Date());
-        app.helper.waitUserSid(this.getApiData)
+
     },
 
     showDate: function (day) {
@@ -73,7 +77,7 @@ Page({
         let that = this;
 
         wx.showLoading({ title: '加载中...' });
-        app.helper.getApi('movie', {'id': that.data.apiData.id}).then(function (res) {
+        app.helper.getApi('movie', {'id': that.data.id}).then(function (res) {
             that.setData({apiData: res.data.results});
             wx.hideLoading();
         })
@@ -84,9 +88,9 @@ Page({
         var beforeDate = new Date(before);
 
         if (beforeDate - new Date() !== 0) {
-            this.setData({is_today: true});
+            this.setData({is_today: true, index: e.detail.current});
         } else {
-            this.setData({is_today: false});
+            this.setData({is_today: false, index: e.detail.current});
         }
 
         this.showDate(beforeDate);
@@ -94,8 +98,8 @@ Page({
 
     onShareAppMessage: function () {
         return {
-            title: this.data.title,
-            path: '/pages/index/index?id=' + this.data.id
+            title: this.data.apiData[this.data.index].title,
+            path: '/pages/index/index?id=' + this.data.apiData[this.data.index].id
         }
     },
 

@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
+from itertools import chain
 
 import requests
 from rest_framework import viewsets
@@ -22,7 +23,11 @@ class TopViewSet(viewsets.ModelViewSet):
         if id == '':
             queryset = self.queryset.order_by('?')[0:15]
         else:
-            queryset = self.queryset.filter(id=id)
+            queryset1 = self.queryset.filter(id=id)
+            queryset2 = self.queryset.order_by('?')[0:14]
+            queryset = []
+            queryset.extend(queryset2)
+            queryset.extend(queryset1)
 
         return queryset
 
