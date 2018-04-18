@@ -6,8 +6,8 @@ Page({
     data: {
         windowWidth: 0,
         windowHeight: 0,
-        current: 14,
-        index: 14,
+        current: 29,
+        index: 29,
         id: '',
         is_today: false,
         apiData: {id: ''}

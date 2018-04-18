@@ -20,10 +20,10 @@ class TopViewSet(viewsets.ModelViewSet):
     def get_queryset(self):
         id = self.request.query_params.get('id', '')
         if id == '':
-            queryset = self.queryset.order_by('?')[0:15]
+            queryset = self.queryset.order_by('?')[0:30]
         else:
             queryset1 = self.queryset.filter(id=id)
-            queryset2 = self.queryset.order_by('?')[0:14]
+            queryset2 = self.queryset.order_by('?')[0:29]
             queryset = []
             queryset.extend(queryset2)
             queryset.extend(queryset1)

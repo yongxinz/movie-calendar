@@ -1,8 +1,9 @@
-<swiper style="height: {{ windowHeight }}px" current="{{ current }}" bindchange="bindChange">
-    <image src="../../static/image/icon_left.png"
-           style="width: 60rpx;height: 60rpx;position: absolute;left: 10rpx;top: {{ windowHeight / 2 }}px;"></image>
-    <image src="../../static/image/icon_right.png" wx:if="{{ is_today }}"
-           style="width: 60rpx;height: 60rpx;position: absolute;right: 10rpx;top: {{ windowHeight / 2 }}px;"></image>
+<image src="../../static/image/icon_left.png" wx:if="{{ index > 0 }}"
+       style="width: 60rpx;height: 60rpx;position: absolute;left: 10rpx;top: {{ windowHeight / 2 }}px;"></image>
+<image src="../../static/image/icon_right.png" wx:if="{{ is_today }}"
+       style="width: 60rpx;height: 60rpx;position: absolute;right: 10rpx;top: {{ windowHeight / 2 }}px;"></image>
+
+<swiper style="height: {{ windowHeight }}px;" current="{{ current }}" bindchange="bindChange">
     <block wx:for="{{ apiData }}" wx:key="index" wx:for-index="id" wx:for-item="item">
         <swiper-item>
             <view class="calendar-container" style="width: {{ windowWidth }}px;height: {{ windowHeight }}px;">
