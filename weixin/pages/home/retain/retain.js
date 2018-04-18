@@ -3,6 +3,9 @@ const app = getApp();
 Page({
     data: {
         apiData: {},
+        options: {
+            page: 1
+        },
         count: 0,
         msg: ''
     },
@@ -29,10 +32,36 @@ Page({
 
     getApiData: function () {
         let that = this;
+        that.setData({
+            'options.page': 1
+        });
 
+        wx.showLoading({title: '加载中...'});
         app.helper.getApi('retain', that.data.options).then(function (res) {
-            that.setData({apiData: res.data.results});
+            that.setData({apiData: res.data});
             that.setData({count: res.data.count});
-        })
+        }).then(function () {
+            wx.hideLoading()
+        });
+    },
+
+    onReachBottom: function () {
+        let that = this;
+        if (that.data.apiData.next !== null) {
+            let next_page = that.data.options.page + 1;
+            that.setData({
+                'options.page': next_page
+            });
+
+            wx.showLoading({title: '加载中...'});
+            app.helper.getApi('retain', that.data.options).then(function (res) {
+                for (let i = 0; i < res.data.results.length; i++) {
+                    that.data.apiData.results.push(res.data.results[i])
+                }
+                that.setData({apiData: that.data.apiData, 'apiData.next': res.data.next});
+            }).then(function () {
+                wx.hideLoading()
+            });
+        }
     }
 });

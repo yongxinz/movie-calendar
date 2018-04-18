@@ -1,7 +1,7 @@
 <view class="page__bd">
     <view class="weui-panel__hd">{{ msg }}{{ count }}部电影</view>
     <view class="weui-panel__bd">
-        <block wx:for="{{ apiData }}" wx:key="{{ index }}">
+        <block wx:for="{{ apiData.results }}" wx:key="{{ index }}">
             <navigator url="../../detail/detail?subject={{ item.subject }}"
                        class="weui-media-box weui-media-box_appmsg section-height" hover-class="weui-cell_active">
                 <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width: 135rpx;height: 180rpx">
