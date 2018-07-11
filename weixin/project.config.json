@@ -8,7 +8,7 @@
 		"newFeature": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "1.5.3",
+	"libVersion": "2.1.1",
 	"appid": "wxeb8c9c7f55ee88f1",
 	"projectname": "movie-calendar",
 	"condition": {

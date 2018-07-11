@@ -28,4 +28,6 @@
         <text class="film-summarytitle">剧情简介</text>
         <text class="film-summarycontent">{{ apiData.summary }}</text>
     </view>
+
+    <ad unit-id="adunit-17cad77347033c89"></ad>
 </scroll-view>

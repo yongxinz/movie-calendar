@@ -1,22 +1,22 @@
 <view class="section">
     <view class="userinfo">
-        <block wx:if="{{ gData.userInfo != null }}">
-            <image class="userinfo-avatar" src="{{ gData.userInfo.avatarUrl }}" background-size="cover"></image>
+        <block>
+            <open-data type="userAvatarUrl" class="userinfo-avatar"></open-data>
             <view class="userinfo-name">
-                <text class="flex-item userinfo-nickname">{{ gData.userInfo.nickName }}</text>
+                <open-data type="userNickName" class="flex-item userinfo-nickname"></open-data>
             </view>
         </block>
 
-        <block wx:if="{{ gData.userInfo == null }}">
+        <!-- <block wx:if="{{ gData.userInfo == null }}">
             <view style="text-align: center;">
                 <button open-type="getUserInfo" bindgetuserinfo="bindGetUserinfo" size="mini" style="margin-top: 75rpx">
                     授权使用昵称和头像
                 </button>
             </view>
-        </block>
+        </block> -->
     </view>
 
-    <view class="page__bd">
+    <view class="page__bd" style="margin-bottom: 30rpx">
         <view class="weui-cells weui-cells_after-title">
             <navigator url="./retain/retain?is_going=true" class="weui-cell weui-cell_access" hover-class="weui-cell_active">
                 <view class="weui-cell__bd">想看的电影</view>
@@ -28,4 +28,6 @@
             </navigator>
         </view>
     </view>
+
+    <ad unit-id="adunit-17cad77347033c89"></ad>
 </view>
