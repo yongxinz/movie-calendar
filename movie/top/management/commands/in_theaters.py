@@ -3,7 +3,7 @@
 import requests
 from django.core.management.base import BaseCommand
 
-from top.models import InTheaters
+from top.models import InTheaters, Movie
 
 
 class Command(BaseCommand):
@@ -37,3 +37,8 @@ class Command(BaseCommand):
             print(subject, title, countries, genres, rating, stars, year, directors, casts, images, ratings_count, summary)
             InTheaters.objects.create(subject=subject, title=title, countries=countries, genres=genres, rating=rating, stars=stars, year=year,
                                       directors=directors, casts=casts, images=images, ratings_count=ratings_count, summary=summary)
+
+            Movie.objects.update_or_create(subject=subject, defaults={'title': title, 'countries': countries, 'genres': genres,
+                                                                      'rating': rating, 'stars': stars, 'year': year, 'directors': directors,
+                                                                      'casts': casts, 'images': images, 'ratings_count': ratings_count,
+                                                                      'summary': summary})

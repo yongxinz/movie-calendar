@@ -12,7 +12,7 @@ App({
 
     onLaunch: function () {
         this.wxLogin();
-        this.wxUserInfo();
+        // this.wxUserInfo();
     },
 
     wxLogin: function () {

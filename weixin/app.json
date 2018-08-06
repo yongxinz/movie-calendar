@@ -1,6 +1,7 @@
 {
     "pages": [
         "pages/index/index",
+        "pages/theaters/theaters",
         "pages/detail/detail",
         "pages/home/home",
         "pages/home/retain/retain"
@@ -16,6 +17,12 @@
                 "iconPath": "static/image/icon_index.png",
                 "selectedIconPath": "static/image/icon_index_select.png",
                 "text": "日历"
+            },
+            {
+                "pagePath": "pages/theaters/theaters",
+                "iconPath": "static/image/icon_movie.png",
+                "selectedIconPath": "static/image/icon_movie_select.png",
+                "text": "热映"
             },
             {
                 "pagePath": "pages/home/home",

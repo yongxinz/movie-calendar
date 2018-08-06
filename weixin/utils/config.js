@@ -19,7 +19,8 @@ module.exports.apiMap = {
     movie: '/movie/',
     detail: '/movie/detail/',
     tag: '/movie/tag/',
-    retain: '/retain/'
+    retain: '/retain/',
+    theaters: '/theaters/'
 };
 
 module.exports.emitter = new EventEmitter();

@@ -18,13 +18,14 @@ from django.conf.urls import url, include
 from rest_framework import routers
 
 from passport.api import WeixinUserViewSet
-from top.api import TopViewSet, TagViewSet
+from top.api import TopViewSet, TagViewSet, InTheatersViewSet
 
 router = routers.DefaultRouter()
 
 router.register(r'passport/wx', WeixinUserViewSet, base_name='passport_weixin')
 router.register(r'movie', TopViewSet, base_name='movie')
 router.register(r'retain', TagViewSet, base_name='retain')
+router.register(r'theaters', InTheatersViewSet, base_name='theaters')
 
 urlpatterns = [
     url(r'^api/', include(router.urls)),

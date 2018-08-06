@@ -80,4 +80,4 @@ class InTheaters(models.Model):
     operate_time = models.DateTimeField(u"操作时间", auto_now=True)
 
     class Meta:
-        ordering = ['-id']
+        ordering = ['id']

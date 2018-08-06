@@ -7,8 +7,8 @@ from rest_framework.decorators import list_route
 from rest_framework.response import Response
 from django.http import JsonResponse
 
-from .models import Top, Movie, Tag
-from .serializers import TopSerializer, TagSerializer
+from .models import Top, Movie, Tag, InTheaters
+from .serializers import TopSerializer, TagSerializer, InTheatersSerializer
 from .filter import TagFilter
 from tools.rest_helper import YMMixin
 
@@ -87,3 +87,8 @@ class TagViewSet(YMMixin, viewsets.ModelViewSet):
     queryset = Tag.objects.all()
     serializer_class = TagSerializer
     filter_class = TagFilter
+
+
+class InTheatersViewSet(YMMixin, viewsets.ModelViewSet):
+    queryset = InTheaters.objects.all()
+    serializer_class = InTheatersSerializer

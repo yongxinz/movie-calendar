@@ -1,7 +1,7 @@
 # coding=utf-8
 from rest_framework import serializers
 
-from .models import Top, Tag
+from .models import Top, Tag, InTheaters
 
 
 class TopSerializer(serializers.ModelSerializer):
@@ -40,3 +40,10 @@ class TagSerializer(serializers.ModelSerializer):
     class Meta:
         model = Tag
         exclude = ('operate_time', 'is_going', 'is_done')
+
+
+class InTheatersSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = InTheaters
+        exclude = ('operate_time', )

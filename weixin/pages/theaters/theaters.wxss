@@ -1,0 +1,18 @@
+.section-height {
+    height: 180rpx;
+}
+
+.title {
+    font-size: 36rpx;
+}
+
+.desc {
+    font-size: 28rpx;
+    line-height: 1.5;
+}
+
+.rating {
+    float: right;
+    font-size: 30rpx;
+    color: #FFBB23;
+}

@@ -1,0 +1,21 @@
+<view class="page__bd">
+    <view class="weui-panel__bd">
+        <block wx:for="{{ apiData.results }}" wx:key="{{ index }}">
+            <navigator url="../detail/detail?subject={{ item.subject }}"
+                       class="weui-media-box weui-media-box_appmsg section-height" hover-class="weui-cell_active">
+                <view class="weui-media-box__hd weui-media-box__hd_in-appmsg" style="width: 135rpx;height: 180rpx">
+                    <image class="weui-media-box__thumb" style="width: 135rpx;height: 180rpx" src="{{ item.images }}" />
+                </view>
+                <view class="weui-media-box__bd weui-media-box__bd_in-appmsg section-height">
+                    <view class="weui-media-box__title title">
+                        {{item.title}}<span class="rating">{{item.rating}}<text style="font-size: 20rpx;">分</text></span>
+                    </view>
+                    <view class="weui-media-box__desc desc">{{item.genres}}</view>
+                    <view class="weui-media-box__desc desc">{{item.directors}}</view>
+                    <view class="weui-media-box__desc desc">{{item.year}}</view>
+                </view>
+            </navigator>
+            <ad wx:if="{{ index === 4 }}" unit-id="adunit-17cad77347033c89"></ad>
+        </block>
+    </view>
+</view>
