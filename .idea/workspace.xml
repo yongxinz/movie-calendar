@@ -2,16 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="73a88560-719f-40eb-91b7-371f95af7f9f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/movie/urls.py" afterPath="$PROJECT_DIR$/movie/movie/urls.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/top/api.py" afterPath="$PROJECT_DIR$/movie/top/api.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/top/management/commands/in_theaters.py" afterPath="$PROJECT_DIR$/movie/top/management/commands/in_theaters.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/top/models.py" afterPath="$PROJECT_DIR$/movie/top/models.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/movie/top/serializers.py" afterPath="$PROJECT_DIR$/movie/top/serializers.py" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/app.js" afterPath="$PROJECT_DIR$/weixin/app.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/app.json" afterPath="$PROJECT_DIR$/weixin/app.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/project.config.json" afterPath="$PROJECT_DIR$/weixin/project.config.json" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/utils/config.js" afterPath="$PROJECT_DIR$/weixin/utils/config.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/weixin/pages/theaters/theaters.js" afterPath="$PROJECT_DIR$/weixin/pages/theaters/theaters.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -86,7 +77,7 @@
         <entry file="file://$PROJECT_DIR$/movie/top/api.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="349">
-              <caret line="57" column="38" lean-forward="true" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+              <caret line="57" column="38" lean-forward="false" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
               <folding>
                 <element signature="e#24#63#0" expanded="true" />
               </folding>
@@ -114,11 +105,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="theaters.wxss" pinned="false" current-in-tab="true">
+      <file leaf-file-name="theaters.wxss" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.wxss">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="306">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theaters.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="468">
+              <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -128,7 +129,7 @@
         <entry file="file://$PROJECT_DIR$/movie/top/models.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="894">
-              <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+              <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
               <folding />
             </state>
           </provider>
@@ -138,7 +139,7 @@
         <entry file="file://$PROJECT_DIR$/movie/top/management/commands/in_theaters.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="792">
-              <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+              <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
               <folding>
                 <element signature="e#16#31#0" expanded="true" />
               </folding>
@@ -146,26 +147,21 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="movie.public.top_intheaters" pinned="false" current-in-tab="false">
-        <entry file="dbDummy://dbtable:/905e775f/6380c890-bc9c-4c8f-8dab-a284ce6a0eba/movie.public.top_intheaters">
-          <provider editor-type-id="text-editor">
+      <file leaf-file-name="theaters.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.wxml">
+          <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-            <state>
-              <filtering enabled="true" />
-            </state>
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="theaters.wxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.wxml">
+      <file leaf-file-name="retain.wxml" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/weixin/pages/home/retain/retain.wxml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="180">
-              <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -176,16 +172,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-400">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="detail.wxml" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/weixin/pages/detail/detail.wxml">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="558">
-              <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="47" />
               <folding />
             </state>
           </provider>
@@ -213,6 +199,7 @@
       <find>loading_opacity</find>
       <find>t</find>
       <find>Movie</find>
+      <find>count</find>
     </findStrings>
     <replaceStrings>
       <replace>movie</replace>
@@ -271,11 +258,11 @@
         <option value="$PROJECT_DIR$/movie/top/api.py" />
         <option value="$PROJECT_DIR$/movie/movie/urls.py" />
         <option value="$PROJECT_DIR$/weixin/utils/config.js" />
-        <option value="$PROJECT_DIR$/weixin/pages/theaters/theaters.js" />
         <option value="$PROJECT_DIR$/movie/top/models.py" />
         <option value="$PROJECT_DIR$/movie/top/management/commands/in_theaters.py" />
         <option value="$PROJECT_DIR$/weixin/pages/theaters/theaters.json" />
         <option value="$PROJECT_DIR$/weixin/pages/theaters/theaters.wxml" />
+        <option value="$PROJECT_DIR$/weixin/pages/theaters/theaters.js" />
       </list>
     </option>
   </component>
@@ -1070,14 +1057,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/pages/home/retain/retain.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="54">
-          <caret line="3" column="41" lean-forward="false" selection-start-line="3" selection-start-column="41" selection-end-line="3" selection-end-column="41" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/weixin/pages/home/retain/retain.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="846">
@@ -1188,14 +1167,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="440">
-          <caret line="39" column="78" lean-forward="true" selection-start-line="39" selection-start-column="78" selection-end-line="39" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="dbDummy://dbtable:/905e775f/6380c890-bc9c-4c8f-8dab-a284ce6a0eba/movie.public.top_intheaters">
       <provider editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1212,7 +1183,7 @@
     <entry file="file://$PROJECT_DIR$/weixin/pages/detail/detail.wxml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="558">
-          <caret line="31" column="47" lean-forward="true" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="47" />
+          <caret line="31" column="47" lean-forward="false" selection-start-line="31" selection-start-column="4" selection-end-line="31" selection-end-column="47" />
           <folding />
         </state>
       </provider>
@@ -1236,7 +1207,7 @@
     <entry file="file://$PROJECT_DIR$/movie/top/api.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
-          <caret line="57" column="38" lean-forward="true" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
+          <caret line="57" column="38" lean-forward="false" selection-start-line="57" selection-start-column="38" selection-end-line="57" selection-end-column="38" />
           <folding>
             <element signature="e#24#63#0" expanded="true" />
           </folding>
@@ -1251,18 +1222,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.wxml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="10" column="38" lean-forward="false" selection-start-line="10" selection-start-column="38" selection-end-line="10" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/movie/top/management/commands/in_theaters.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="792">
-          <caret line="44" column="0" lean-forward="true" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
+          <caret line="44" column="0" lean-forward="false" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
           <folding>
             <element signature="e#16#31#0" expanded="true" />
           </folding>
@@ -1272,7 +1235,7 @@
     <entry file="file://$PROJECT_DIR$/movie/top/models.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="894">
-          <caret line="82" column="21" lean-forward="true" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
+          <caret line="82" column="21" lean-forward="false" selection-start-line="82" selection-start-column="21" selection-end-line="82" selection-end-column="21" />
           <folding />
         </state>
       </provider>
@@ -1280,7 +1243,31 @@
     <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.wxss">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <caret line="17" column="1" lean-forward="false" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/pages/home/retain/retain.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.wxml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/weixin/pages/theaters/theaters.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="468">
+          <caret line="26" column="0" lean-forward="true" selection-start-line="26" selection-start-column="0" selection-end-line="26" selection-end-column="0" />
           <folding />
         </state>
       </provider>
