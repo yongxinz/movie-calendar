@@ -13,3 +13,4 @@ webdist*
 *.db
 *.sqlite3
 *.log
+.vscode
