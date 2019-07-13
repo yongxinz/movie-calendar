@@ -31,3 +31,5 @@ REST_FRAMEWORK = {
     'DEFAULT_PAGINATION_CLASS': 'tools.rest_helper.YMPagination',
     'DEFAULT_FILTER_BACKENDS': ('django_filters.rest_framework.DjangoFilterBackend',),
 }
+
+DOUBAN_API = 'https://douban.uieee.com'
