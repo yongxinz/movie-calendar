@@ -33,9 +33,10 @@
         ]
     },
     "window": {
-        "backgroundTextStyle": "white",
+        "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#FFF",
         "navigationBarTitleText": "一个电影日历",
         "navigationBarTextStyle": "black"
-    }
+    },
+    "sitemapLocation": "sitemap.json"
 }
