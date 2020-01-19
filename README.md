@@ -1,3 +1,7 @@
+欢迎关注我的微信公众号：AlwaysBeta，更多精彩内容等你来。
+
+![](http://ww1.sinaimg.cn/large/0061a0TTgy1gaqr087j9xj3076076wex.jpg)
+
 # movie-calendar
 
 
@@ -59,7 +63,7 @@
 >pip install virtualenv 
 
 >pip install virtualenvwrapper
- 
+
 然后编辑 .bash_profile 文件，添加下面三行：
 
 >VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3.6 
