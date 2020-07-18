@@ -6,32 +6,6 @@
         "pages/home/home",
         "pages/home/retain/retain"
     ],
-    "tabBar": {
-        "color": "#dddddd",
-        "selectedColor": "#2c2c2c",
-        "borderStyle": "black",
-        "backgroundColor": "#ffffff",
-        "list": [
-            {
-                "pagePath": "pages/index/index",
-                "iconPath": "static/image/icon_index.png",
-                "selectedIconPath": "static/image/icon_index_select.png",
-                "text": "日历"
-            },
-            {
-                "pagePath": "pages/theaters/theaters",
-                "iconPath": "static/image/icon_movie.png",
-                "selectedIconPath": "static/image/icon_movie_select.png",
-                "text": "热映"
-            },
-            {
-                "pagePath": "pages/home/home",
-                "iconPath": "static/image/icon_home.png",
-                "selectedIconPath": "static/image/icon_home_select.png",
-                "text": "我的"
-            }
-        ]
-    },
     "window": {
         "backgroundTextStyle": "light",
         "navigationBarBackgroundColor": "#FFF",

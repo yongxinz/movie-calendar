@@ -15,12 +15,16 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         num = 0
         while num <= 250:
+            user_agent = 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_1) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/78.0.3904.108 Safari/537.36'
+            headers = {}
+            headers['user-agent'] = user_agent
             url = 'https://movie.douban.com/top250?start=' + str(num) + '&filter='
             num += 25
             '''
             利用循环实现翻页并获取网页内容
             '''
-            response = requests.get(url)
+            response = requests.get(url, headers=headers)
+            print(response)
             soup = BeautifulSoup(response.text, 'lxml')
             movies = soup.find_all('div', class_="item")
 

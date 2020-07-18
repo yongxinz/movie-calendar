@@ -3,7 +3,7 @@ import uuid
 import requests
 
 from django.conf import settings
-from rest_framework.decorators import list_route
+from rest_framework.decorators import action
 from rest_framework import viewsets
 from rest_framework.response import Response
 
@@ -12,7 +12,7 @@ from tools.helper import Dict2obj
 
 
 class WeixinUserViewSet(viewsets.ViewSet):
-    @list_route(methods=['get'], authentication_classes=())
+    @action(methods=['get'], detail=False, authentication_classes=())
     def login(self, request):
         # 通过微信code获取用户openid
         conf = Dict2obj(settings.WEIXIN)

@@ -3,7 +3,7 @@ from __future__ import unicode_literals
 
 import requests
 from rest_framework import viewsets
-from rest_framework.decorators import list_route
+from rest_framework.decorators import action
 from rest_framework.response import Response
 from django.conf import settings
 from django.http import JsonResponse
@@ -31,12 +31,15 @@ class TopViewSet(viewsets.ModelViewSet):
 
         return queryset
 
-    @list_route(methods=['get'])
-    def detail(self, request):
+    @action(methods=['get'], detail=False)
+    def detail_(self, request):
+        print('hello')
+        print(self.request)
         subject = self.request.query_params.get('subject')
 
         url = settings.DOUBAN_API + '/v2/movie/subject/' + subject
         res = requests.get(url).json()
+        print(res)
 
         title = res['title']
         countries = ','.join(res['countries'])
@@ -61,10 +64,11 @@ class TopViewSet(viewsets.ModelViewSet):
 
         return JsonResponse(res)
 
-    @list_route(methods=['get'])
+    @action(methods=['get'], detail=False)
     def tag(self, request):
         subject = self.request.query_params.get('subject')
         type = self.request.query_params.get('type')
+        print(subject)
 
         movie = Movie.objects.get(subject=subject)
         obj = Tag.objects.get(user=self.request.user, movie=movie)

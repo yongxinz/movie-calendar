@@ -17,7 +17,7 @@ module.exports.baseURL = baseURL;
 module.exports.apiMap = {
     login: '/passport/wx/login/',
     movie: '/movie/',
-    detail: '/movie/detail/',
+    detail: '/movie/detail_/',
     tag: '/movie/tag/',
     retain: '/retain/',
     theaters: '/theaters/'

@@ -15,7 +15,6 @@ class YMAuthentication(authentication.BaseAuthentication):
                 'status': False,
                 'status_code': 403010,
             })
-
         return user, Dict2obj({
             'user': user,
         })

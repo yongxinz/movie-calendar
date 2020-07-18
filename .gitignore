@@ -5,6 +5,7 @@ local.py
 node_modules
 deal-file
 dist
+db
 webdist*
 .idea/
 .DS_Store

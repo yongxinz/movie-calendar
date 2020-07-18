@@ -33,3 +33,4 @@ REST_FRAMEWORK = {
 }
 
 DOUBAN_API = 'https://douban.uieee.com'
+# DOUBAN_API = 'https://api.douban.com'
