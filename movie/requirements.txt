@@ -1,7 +1,7 @@
 Django==2.2.11
 djangorestframework==3.10.3
 django-filter==2.2.0
-requests==2.18.4
+requests==2.20.0
 lxml==4.1.1
 bs4==0.0.1
 gevent==1.2.2
